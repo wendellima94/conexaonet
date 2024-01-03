@@ -170,12 +170,20 @@ a.btn-cta {
   -ms-transition: none;
   -o-transition: none;
 }
-.sub-text{
+.sub-text {
   color: #00a6ff;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: bold;
   font-style: italic;
 }
+.sob-text {
+  color: #000;
+  font-size: 1.9rem;
+  font-weight: bold;
+  font-style: italic;
+
+}
+
 .header.header-scrolled {
   background: #fff;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
@@ -386,8 +394,9 @@ a.btn-cta {
 
 /* ======= Hero Section ======= */
 .hero-section {
+  margin: 30px 30px;
   min-height: 560px;
-  background:transparent;
+  background: transparent;
   position: relative;
 }
 
@@ -467,8 +476,8 @@ a.btn-cta {
     background-size: contain;
     background-repeat: no-repeat;
     height: 100%; /* Ajuste conforme necessário */
-     width: 100%;
-  } 
+    width: 100%;
+  }
 
   .hero-section .figure-holder-wrapper {
     display: none; /* Esconder a figura de imagem em dispositivos móveis, se necessário */
@@ -511,9 +520,104 @@ a.btn-cta {
   font-weight: 300;
 }
 
-.about-section .intro {
-  color: #8e949e;
+/* content bg */
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imagem-fixada {
+  background-image: url("../images/bg-ctn.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+  z-index: -1; /* Coloca a imagem por trás do conteúdo */
+}
+
+.conteudo {
+  padding: 20px;
+}
+
+.about-section .items-wrapper .item-inner:hover {
+  opacity: 2;
+  background-color: #4040fb;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); /* Adiciona um brilho branco */
   font-size: 16px;
+  font-weight: bolder !important;
+  margin: 10px 10px !important;
+  padding: 10px;
+} 
+
+@media (max-width: 1200px) {
+  .about-section .items-wrapper .item-inner:hover {
+    opacity: 2;
+    background-color: #4040fb;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); /* Adiciona um brilho branco */
+  } 
+
+  .about-section .items-wrapper .item-inner {
+    transition: 0.5s;
+    border-radius: 14px;
+    padding: 30px;
+    margin: 20px 0 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+}
+
+@media (max-width: 767.98px) {
+  .imagem-fixada {
+    display: none;
+  }
+
+  .about-section .items-wrapper .figure-holder {
+    margin-bottom: 15px;
+    vertical-align: bottom;
+  }
+
+  .about-section .items-wrapper .figure-image {
+    max-width: 220px;
+  }
+  .about-section .items-wrapper .item-inner {
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 30px;
+    margin: 20px 0 !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .about-section .items-wrapper .item-title {
+    color: #40babd;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+
+  .about-section .items-wrapper .item-desc {
+    color: black;
+  }
+}
+
+.section + .section .imagem-fixada {
+  display: none; /* Oculta a imagem fixa nas seções subsequentes */
+}
+
+/* end */
+
+.about-section .intro {
+  color: black;
+  font-size: 32px;
   max-width: 760px;
   margin: 0 auto;
   margin-bottom: 60px;
@@ -533,8 +637,14 @@ a.btn-cta {
 }
 
 .about-section .items-wrapper .item-inner {
+  transition: 0.5s;
+  border-radius: 14px;
   padding: 30px;
-}
+  background: linear-gradient(to bottom, #0303b5, #4040fb, #8787fb, #6565ff)
+    no-repeat center center;
+
+  height: 440px;
+  }
 
 .about-section .items-wrapper .item-title {
   color: #40babd;
@@ -545,7 +655,8 @@ a.btn-cta {
 }
 
 .about-section .items-wrapper .item-desc {
-  color: #616670;
+  color: black;
+  font-weight: bold;
 }
 
 .technologies {
@@ -636,7 +747,7 @@ a.btn-cta {
 
 /* ======= Testimonials Section ======= */
 .testimonials-section {
-  background: linear-gradient(to bottom, #006494, #173442, rgb(14, 25, 31), #153341)
+  background: linear-gradient(to bottom, #0303b5, #4040fb, #8787fb, #6565ff)
     no-repeat center center;
   padding-top: 90px;
   padding-bottom: 90px;
@@ -813,8 +924,8 @@ a.btn-cta {
 }
 
 .testimonials-section .intro {
-  color: #8e949e;
-  font-size: 18px;
+  color: #191717;
+  font-size: 30px;
   max-width: 760px;
   margin: 0 auto;
   margin-bottom: 60px;
@@ -854,18 +965,21 @@ a.btn-cta {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.items:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  opacity: 1;
-  transition: 0.5s;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
 .pricing-wrapper .items .item-inner {
-  background: #006494;
+  transition: 0.8s;
+}
+
+.pricing-wrapper .items .item-inner:hover {
+  opacity: 2;
+  background-color: #4040fb;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); /* Adiciona um brilho branco */
+}
+
+.pricing-wrapper .items .item-inner {
+  background: #0303b5;
   box-shadow: 3px 4px 3px 2px rgba(0, 0, 0, 0.2);
-  border: 1PX SOLID;
+  border: 1px solid #8787fb;
 }
 .pricing-wrapper .item-1 .item-inner {
   background: #09968f;
@@ -1221,7 +1335,6 @@ a.btn-cta {
   }
 }
 @media (min-width: 768px) {
-
   .feature-nav {
     text-align: left;
     padding-left: 30px;
@@ -1238,7 +1351,6 @@ a.btn-cta {
 }
 
 @media (min-width: 992px) {
-
   .main-nav .nav .nav-item {
     margin-right: 25px;
   }
@@ -1257,7 +1369,6 @@ a.btn-cta {
 }
 
 @media (min-width: 1200px) {
-  
   .hero-section .figure-holder .figure-image {
     width: 570px;
     bottom: 0;
@@ -1267,4 +1378,12 @@ a.btn-cta {
 
 .txt-wdl {
   font-size: 18px;
+}
+
+.info-contact {
+  border-top: 1px solid white;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
 }

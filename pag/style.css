@@ -1,0 +1,9 @@
+.pricing-wrapper .items .item-inner {
+    transition: 0.5s;
+    position: relative;
+}
+
+.pricing-wrapper .items .item-inner:hover {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.8); /* Adiciona um brilho branco */
+    transform: scale(1.1);
+}
